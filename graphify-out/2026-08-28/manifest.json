@@ -18,9 +18,15 @@
     "semantic_hash": ""
   },
   "DOCUMENTO_MAESTRO.md": {
-    "mtime": 1787905003.639019,
-    "seen": 1787953072.5508225,
-    "ast_hash": "3633d6a9c1be0ff97593c1e27e263110",
+    "mtime": 1787959309.2865727,
+    "seen": 1787959314.059351,
+    "ast_hash": "179baef44c2ed60c478a7f46c427f681",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787953808.1545966,
+    "seen": 1787954179.2383745,
+    "ast_hash": "09957fc60350e7507b97b1e9ebdd183e",
     "semantic_hash": ""
   }
 }

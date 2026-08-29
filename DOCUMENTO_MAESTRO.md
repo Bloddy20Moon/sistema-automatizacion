@@ -54,19 +54,77 @@ Transicionar a una **Plataforma Web Centralizada con Base de Datos Relacional (P
 
 ## 3. Estructura de Datos (Diccionario de Datos)
 
-### A. Matriz Principal de Ventas
-| Dato a Capturar | Tipo | Propósito |
-| :--- | :--- | :--- |
-| **Identificador de Orden** | Texto Alfanumérico | Código de expediente general agrupador. |
-| **Correlativo / Número** | Texto Numérico / Entero | Identificador de línea. Para líneas nuevas, inicia como "POR ASIGNAR". |
-| **Documento del Asesor** | Texto Numérico | DNI del asesor para asociar KPIs y comisiones. |
-| **Tipo de Transacción** | Lista Opciones | Portabilidad, Línea Nueva, Línea Adicional, Renovación. |
-| **Estado de Operación** | Lista Opciones | Pendiente, Activado, Caído. |
-| **Motivo de Caída** | Lista Opciones | Causa del rechazo (Riesgo Crediticio, Fraude, Desiste, etc.). |
-| **Condición de Equipo y Logística** | Lista Opciones | Tipo de entrega (Delivery, Tienda) y hardware (Solo Chip, Con Equipo). |
-| **Fecha de Ingreso** | Fecha y Hora | Cuándo el asesor ingresó la venta. |
-| **Fecha de Activación** | Fecha y Hora | Cuándo el Backoffice cerró la venta en Siebel. |
-| **Fecha de Última Modificación** | Fecha y Hora | Control de auditoría técnica. |
+### A. Matriz Principal de Ventas (Columnas del Excel)
+El sistema almacenará todos los campos que el asesor y el backoffice gestionan en la hoja de cálculo. Se detallan a continuación organizados por categoría:
+
+#### 1. Datos de Identificación y Control Operativo
+* **Marca temporal** (DateTime): Fecha y hora automática del envío del formulario.
+* **CAMPAÑA** (String): Nombre de la campaña (ej. `WSP APP`, `C2C APP`).
+* **FECHA DE VENTA** (Date): Fecha en la que se efectúa la venta.
+* **CD** (String): Código/identificador del CD.
+* **TÚ HICISTE CVOZ?** (String/Boolean): Registro si se realizó confirmación por voz.
+* **VALIDADOR** (String): Nombre del validador de la venta.
+* **TIPO DE VENTA** (String): Clasificación (Portabilidad, Línea Nueva, Renovación).
+
+#### 2. Datos del Cliente y la Gestión
+* **DETALLE DE VENTA** (String): Descripción del plan o servicio vendido.
+* **VENTA** (String): Tipo de transacción comercial.
+* **OFERTA** (String): Detalles de la oferta comercial aplicada.
+* **DNI DEL CLIENTE** (String): Documento de identidad del comprador.
+* **NOMBRE DEL CLIENTE** (String): Nombre completo del cliente.
+* **FECHA DE NACIMIENTO** (Date): Fecha de nacimiento del cliente.
+* **LUGAR DE NACIMIENTO** (String): Ciudad/Distrito de nacimiento del cliente.
+* **NÚMERO DE REFERENCIA** (String): Teléfono alternativo de contacto.
+* **NÚMERO A PORTAR O RENOVAR** (String): Número telefónico principal de la transacción.
+* **OPERADOR ACTUAL** (String): Operador de origen en portabilidad (Claro, Movistar, Entel, Bitel).
+* **ORIGEN DE LINEA** (String): Procedencia de la línea.
+
+#### 3. Especificaciones del Plan y Equipo
+* **CICLO** (String): Ciclo de facturación asignado.
+* **TIPO DE PLAN** (String): Tipo de plan contratado (Postpago, Prepago, etc.).
+* **PLANES NUEVOS** (String): Nombre del plan adquirido.
+* **PLANES ANTIGUOS** (String): Plan anterior (en caso de Renovación).
+* **LINEA ASOCIADA (PF)** (String): Línea telefónica asociada.
+* **SKU** (String): Código de stock del equipo.
+* **CANTIDAD DE CUOTAS** (Int): Cuotas de financiamiento del equipo (0, 12, 18, etc.).
+* **CUOTAS MENSUALES** (Decimal): Importe de las cuotas mensuales del equipo.
+* **PROMOCIÓN** (String): Nombre de la promoción aplicada.
+
+#### 4. Entrega y Logística
+* **TIPO DE ENTREGA** (String): Modalidad (Delivery, Tienda).
+* **MOTIVO DE RT** (String): Causa del rechazo logístico / devolución de equipo.
+* **MODALIDAD** (String): Modalidad de entrega/pago.
+* **MOTIVO DE 24H A 72H** (String): Causa del plazo de entrega ampliado.
+* **FECHA DE ENTREGA** (Date): Fecha de entrega programada o real.
+* **LUGAR DE ENTREGA** (String): Establecimiento o punto de entrega.
+* **DIRECCION DE ENTREGA** (String): Dirección física de destino.
+* **REFERENCIA DE ENTREGA** (String): Detalles adicionales para llegar al domicilio.
+* **COORDENADAS** (String): Ubicación GPS (Latitud/Longitud) para el delivery.
+* **DIRECCION DE FACTURACION** (String): Dirección de envío de recibos.
+
+#### 5. Gestión del Asesor y Venta
+* **LINK DE CONVERSACION BOTMAKER** (String): Enlace al chat con el cliente para auditoría.
+* **MEDIO DE VENTA** (String): Canal de venta.
+* **DNI ASESOR** (String): Documento de identidad del vendedor (clave de asociación).
+* **NOMBRE ASESOR** (String): Nombre del vendedor.
+* **TURNO** (String): Turno de trabajo (Mañana, Tarde, Noche).
+* **ID VALKIRIA** (String): Identificador interno del sistema Valkiria.
+* **RESULTADO** (String): Estado de la venta a nivel del asesor.
+* **ID OT** (String): Identificador de la Orden de Trabajo (Siebel/Valkiria).
+* **¿EXCEPCIONES ?** (String): Registro de excepciones aplicadas.
+* **REINGRESO** (String/Boolean): Indica si la orden fue ingresada nuevamente tras un rechazo.
+* **OBSERVACION ES CALIDAD** (String): Notas del validador de calidad.
+
+#### 6. Calidad y Validación (Campos actualizados por Backoffice)
+* **CALIDAD** (String): Calificación de la llamada / venta por auditoría.
+* **RESULTADO_ENTREGA** (String): Estado logístico (Entregado, Cancelado, etc.).
+* **ESTADO_SIEBEL** (String): Estado transaccional en Siebel (Cerrado, En proceso, Pendiente, Cancelado).
+* **MOTIVO_SIEBEL** (String): Razón del estado en Siebel (ej. Motivo de caída).
+* **FECHA ACTIVACIÓN** (DateTime): Fecha y hora en la que la línea se activa formalmente.
+* **ESTADO** (String): Estado final de la venta procesada por el sistema (`ACTIVADO`, `PENDIENTE`, `CAIDA`).
+* **GTR VENTA** (String): ID de gestión de venta.
+* **CONDICIONAL** (String): Estado de venta condicional.
+
 
 ### B. Matriz de Auditoría y Trazabilidad (Historial)
 * **Referencia de Venta:** Expediente y correlativo modificado.
@@ -85,6 +143,47 @@ Transicionar a una **Plataforma Web Centralizada con Base de Datos Relacional (P
 * **Meta (Cuota):** Cantidad de líneas activadas a cumplir.
 
 ---
+
+### C. Lógica de Multiórdenes y Tipos de Venta
+
+Para procesar sin error las casuísticas reales del negocio (asesores cargando portabilidades, líneas y renovaciones), el motor de base de datos y de sincronización aplicará las siguientes reglas lógicas:
+
+1. **Portabilidad:**
+   * **Multiorden con IDs diferentes (Asesor A vende 2 portabilidades con ID 1 y 2):** Se ingresan como dos registros totalmente independientes, pues cada una tiene su propio `idOt`.
+   * **Línea múltiple en un solo ID (Asesor B vende 2 portabilidades bajo el ID 3):** El motor lee la celda `numeroPortarRenovar`, extrae los dos números de 9 dígitos (mediante Regex) y genera **2 registros separados en la BD** vinculados al mismo `idOt`:
+     * Fila 1: `idOt = 3`, `correlative = 1`, `numeroPortarRenovar = 999111222`, `tipoVenta = PORTA`
+     * Fila 2: `idOt = 3`, `correlative = 2`, `numeroPortarRenovar = 999333444`, `tipoVenta = PORTA`
+     * Ambos suman al KPI del Asesor B.
+
+2. **Líneas Nuevas y Adicionales:**
+   * **Múltiples líneas en IDs diferentes (Asesor A vende 3 líneas nuevas con IDs 4, 5 y 6):** Al tener IDs distintos, se guardan como 3 registros independientes en la base de datos.
+   * **Múltiples líneas bajo el mismo ID:** Como no tienen número telefónico inicial, el sistema usa la columna `correlative` para desdoblarlas de manera única. Por ejemplo, si se cargan 2 líneas adicionales para el ID 7:
+     * Fila 1: `idOt = 7`, `correlative = 1`, `numeroPortarRenovar = "POR ASIGNAR"`, `tipoVenta = ADICIONAL`
+     * Fila 2: `idOt = 7`, `correlative = 2`, `numeroPortarRenovar = "POR ASIGNAR"`, `tipoVenta = ADICIONAL`
+     * Esto evita conflictos de duplicados antes de que Backoffice asigne los números reales.
+
+3. **Renovaciones:**
+   * **Renovación "Equipo Solo" (Upgrade):** Se asocia a un número existente. El sistema valida que sea 1 sola línea, registrando `hardwareType = EQUIPO` y `tipoVenta = RENO`.
+   * **Renovación "Línea Nueva con Equipo":** Se registra bajo la lógica de Línea Nueva (`numeroPortarRenovar = "POR ASIGNAR"`), con el flag `hardwareType = EQUIPO` encendido para que Logística sepa que debe enviar un terminal y activar una nueva línea.
+
+
+### D. Reglas de Visibilidad y Seguridad de Datos (RLS)
+
+Para garantizar la privacidad y confidencialidad en cada nivel jerárquico, la plataforma aplicará filtros estrictos en las consultas a la base de datos (seguridad a nivel de fila):
+
+1. **Perfil JEFE DE SUPERVISIÓN (Visión Panóptica/Global):**
+   * Tiene acceso a **todas las colas de venta** (`WSP APP`, `WSP APP RENO`, `WSP DIGITAL`, `C2C APP`, `C2C DIGITAL`).
+   * Puede visualizar el desempeño, métricas e historial de **todos los asesores** de la empresa de manera individual o agrupada por cola.
+
+2. **Perfil SUPERVISOR (Visión de Campaña):**
+   * El supervisor está asignado a una o más colas específicas.
+   * **Filtro de datos:** Solo puede visualizar los datos, KPIs, motivos de caída y alertas de las colas a las que está asociado.
+   * **Filtro de personal:** Solo tiene acceso a visualizar y gestionar el desempeño de los **asesores que pertenecen a su misma cola**. Tiene prohibido ver datos de otras colas o de asesores ajenos.
+
+3. **Perfil ASESOR (Visión Individual Autogestionada):**
+   * El asesor pertenece a una cola específica.
+   * **Filtro de datos:** Solo puede ver la cola en la que está y **únicamente sus propios registros y metas individuales (su propio seguimiento)**. No puede ver las ventas, metas ni efectividad de ningún otro asesor, ni el total de su cola.
+
 
 ## 4. Flujo de Resiliencia y Gestión de Excepciones
 

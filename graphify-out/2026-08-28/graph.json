@@ -81,7 +81,19 @@
       "node_kind": "heading",
       "norm_label": "4. flujo de resiliencia y gestion de excepciones",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L89"
+      "source_location": "L170"
+    },
+    {
+      "id": "documento_maestro_5_optimizaci\u00f3n_de_rendimiento_y_consumo_de_apis",
+      "label": "5. Optimizaci\u00f3n de Rendimiento y Consumo de APIs",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Documento de Definici\u00f3n T\u00e9cnica y Operativa (V4)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. optimizacion de rendimiento y consumo de apis",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L178"
     },
     {
       "id": "documento_maestro_a_planteamiento_del_problema",
@@ -192,18 +204,6 @@
       "source_location": "L55"
     },
     {
-      "id": "documento_maestro_a_matriz_principal_de_ventas",
-      "label": "A. Matriz Principal de Ventas",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "3. Estructura de Datos (Diccionario de Datos)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "a. matriz principal de ventas",
-      "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L57"
-    },
-    {
       "id": "documento_maestro_b_matriz_de_auditor\u00eda_y_trazabilidad_historial",
       "label": "B. Matriz de Auditor\u00eda y Trazabilidad (Historial)",
       "_origin": "ast",
@@ -213,7 +213,19 @@
       "node_kind": "heading",
       "norm_label": "b. matriz de auditoria y trazabilidad (historial)",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L71"
+      "source_location": "L129"
+    },
+    {
+      "id": "documento_maestro_c_l\u00f3gica_de_multi\u00f3rdenes_y_tipos_de_venta",
+      "label": "C. L\u00f3gica de Multi\u00f3rdenes y Tipos de Venta",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "3. Estructura de Datos (Diccionario de Datos)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c. logica de multiordenes y tipos de venta",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L147"
     },
     {
       "id": "documento_maestro_c_matriz_de_usuarios_y_accesos",
@@ -225,7 +237,7 @@
       "node_kind": "heading",
       "norm_label": "c. matriz de usuarios y accesos",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L77"
+      "source_location": "L135"
     },
     {
       "id": "documento_maestro_d_matriz_de_metas_cuotas",
@@ -237,7 +249,7 @@
       "node_kind": "heading",
       "norm_label": "d. matriz de metas (cuotas)",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L82"
+      "source_location": "L140"
     },
     {
       "id": "agents_rules_graphify",
@@ -294,6 +306,102 @@
       "norm_label": "workflow: graphify",
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6"
+    },
+    {
+      "id": "documento_maestro_1_datos_de_identificaci\u00f3n_y_control_operativo",
+      "label": "1. Datos de Identificaci\u00f3n y Control Operativo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. datos de identificacion y control operativo",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "documento_maestro_2_datos_del_cliente_y_la_gesti\u00f3n",
+      "label": "2. Datos del Cliente y la Gesti\u00f3n",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. datos del cliente y la gestion",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L69"
+    },
+    {
+      "id": "documento_maestro_3_especificaciones_del_plan_y_equipo",
+      "label": "3. Especificaciones del Plan y Equipo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. especificaciones del plan y equipo",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "documento_maestro_4_entrega_y_log\u00edstica",
+      "label": "4. Entrega y Log\u00edstica",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. entrega y logistica",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L93"
+    },
+    {
+      "id": "documento_maestro_5_gesti\u00f3n_del_asesor_y_venta",
+      "label": "5. Gesti\u00f3n del Asesor y Venta",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. gestion del asesor y venta",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L105"
+    },
+    {
+      "id": "documento_maestro_6_calidad_y_validaci\u00f3n_campos_actualizados_por_backoffice",
+      "label": "6. Calidad y Validaci\u00f3n (Campos actualizados por Backoffice)",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6. calidad y validacion (campos actualizados por backoffice)",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L118"
+    },
+    {
+      "id": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "label": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "A. Matriz Principal de Ventas (Columnas del Excel)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a. matriz principal de ventas (columnas del excel)",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
     }
   ],
   "links": [
@@ -410,24 +518,13 @@
     },
     {
       "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
-      "target": "documento_maestro_a_matriz_principal_de_ventas",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
       "target": "documento_maestro_b_matriz_de_auditor\u00eda_y_trazabilidad_historial",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L71",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -438,7 +535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L77",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -449,7 +546,117 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
+      "target": "documento_maestro_c_l\u00f3gica_de_multi\u00f3rdenes_y_tipos_de_venta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
+      "target": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_5_gesti\u00f3n_del_asesor_y_venta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_6_calidad_y_validaci\u00f3n_campos_actualizados_por_backoffice",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_1_datos_de_identificaci\u00f3n_y_control_operativo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_2_datos_del_cliente_y_la_gesti\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_3_especificaciones_del_plan_y_equipo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
       "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
+      "target": "documento_maestro_4_entrega_y_log\u00edstica",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_documento_de_definici\u00f3n_t\u00e9cnica_y_operativa_v4",
+      "target": "documento_maestro_4_flujo_de_resiliencia_y_gesti\u00f3n_de_excepciones",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_documento_de_definici\u00f3n_t\u00e9cnica_y_operativa_v4",
+      "target": "documento_maestro_5_optimizaci\u00f3n_de_rendimiento_y_consumo_de_apis",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -472,17 +679,6 @@
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
       "source_location": "L55",
-      "weight": 1.0
-    },
-    {
-      "source": "documento_maestro_documento_de_definici\u00f3n_t\u00e9cnica_y_operativa_v4",
-      "target": "documento_maestro_4_flujo_de_resiliencia_y_gesti\u00f3n_de_excepciones",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -519,5 +715,6 @@
       "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "ac5110cd13e57190277cc77435ac3731c3892e5b"
 }
