@@ -81,7 +81,7 @@
       "node_kind": "heading",
       "norm_label": "4. flujo de resiliencia y gestion de excepciones",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L170"
+      "source_location": "L188"
     },
     {
       "id": "documento_maestro_5_optimizaci\u00f3n_de_rendimiento_y_consumo_de_apis",
@@ -93,7 +93,7 @@
       "node_kind": "heading",
       "norm_label": "5. optimizacion de rendimiento y consumo de apis",
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L178"
+      "source_location": "L196"
     },
     {
       "id": "documento_maestro_a_planteamiento_del_problema",
@@ -250,6 +250,18 @@
       "norm_label": "d. matriz de metas (cuotas)",
       "source_file": "DOCUMENTO_MAESTRO.md",
       "source_location": "L140"
+    },
+    {
+      "id": "documento_maestro_d_reglas_de_visibilidad_y_seguridad_de_datos_rls",
+      "label": "D. Reglas de Visibilidad y Seguridad de Datos (RLS)",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "3. Estructura de Datos (Diccionario de Datos)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d. reglas de visibilidad y seguridad de datos (rls)",
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L170"
     },
     {
       "id": "agents_rules_graphify",
@@ -562,6 +574,17 @@
     },
     {
       "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
+      "target": "documento_maestro_d_reglas_de_visibilidad_y_seguridad_de_datos_rls",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DOCUMENTO_MAESTRO.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "documento_maestro_3_estructura_de_datos_diccionario_de_datos",
       "target": "documento_maestro_a_matriz_principal_de_ventas_columnas_del_excel",
       "relation": "contains",
       "_origin": "ast",
@@ -645,7 +668,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L170",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -656,7 +679,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "DOCUMENTO_MAESTRO.md",
-      "source_location": "L178",
+      "source_location": "L196",
       "weight": 1.0
     },
     {

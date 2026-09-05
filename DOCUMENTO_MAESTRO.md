@@ -197,9 +197,20 @@ Para garantizar la privacidad y confidencialidad en cada nivel jerárquico, la p
 
 Para evitar la saturación de consultas recurrentes, cuellos de botella en el servidor y latencia en el consumo de la API REST, se implementarán las siguientes reglas de optimización a nivel de base de datos PostgreSQL:
 
+* **Paginación Obligatoria en Endpoints de Listado:** Para todas las API REST de consulta que retornen listados de ventas (como la bandeja de "Mis Ventas" del Asesor o la vista de "Analítica/Caídas" del Supervisor), el backend de Next.js implementará de forma obligatoria **paginación basada en desplazamiento (Limit/Offset)**. Los parámetros aceptados serán `page` y `limit` (por defecto `limit = 20`). Esto evita el envío de miles de filas innecesarias al cliente, reduciendo drásticamente el consumo de memoria en el servidor y mejorando el tiempo de respuesta visual (FCP/LCP) en el frontend.
 * **Encapsulamiento en Vistas y Funciones Almacenadas (Procedimientos):** Las agregaciones complejas (como el cálculo del porcentaje de efectividad diaria/mensual, el ranking de asesores y la analítica comparativa entre colas) se resolverán del lado del motor PostgreSQL utilizando **Vistas (Views)**, **Vistas Materializadas (Materialized Views)** o **Funciones de Base de Datos (PL/pgSQL)**. Esto permite que el backend de Next.js consuma resultados precalculados o consultas sumamente eficientes.
 * **Índices de Alto Rendimiento:** Se crearán índices compuestos y de búsqueda en las columnas de mayor filtrado y agrupación:
   * Índice sobre `agentDni` para el panel individual del asesor.
   * Índice sobre `opState` y `createdAt` para el filtrado de analíticas por estados y fechas.
   * Índice compuesto sobre `[orderId, correlative]` para la validación ultrarrápida del motor de UPSERT.
 * **Vistas de Caché para Dashboards:** La Jefatura y los supervisores consumirán vistas pre-agregadas que evitarán el escaneo completo de la tabla principal de ventas en cada petición de API.
+
+
+### E. Infraestructura de Base de Datos con Docker
+
+Para garantizar portabilidad y funcionamiento idéntico en cualquier computadora:
+* **Motor:** PostgreSQL 16 Alpine en contenedor Docker (`postgres_sistema_comercial`).
+* **Archivo de Orquestación:** [`docker-compose.yml`](file:///C:/Users/adria/Desktop/TRUSCORP/sistema_automatizacionbackend/docker-compose.yml) en el directorio backend.
+* **Puerto Mapeado:** `5434:5432` (asignado en puerto 5434 para evitar colisiones con otros servicios locales de PostgreSQL existentes en la máquina).
+* **Persistencia:** Volumen nombrado de Docker `postgres_data`.
+* **Seed Inicial:** Script [`prisma/seed.ts`](file:///C:/Users/adria/Desktop/TRUSCORP/sistema_automatizacionbackend/prisma/seed.ts) que inserta los usuarios base (Admin, Supervisor y Asesores) con contraseñas encriptadas mediante bcrypt.

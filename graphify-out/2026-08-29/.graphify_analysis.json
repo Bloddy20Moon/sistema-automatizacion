@@ -1,0 +1,33 @@
+{
+  "communities": {
+    "0": [
+      "graphify",
+      "package_dependencies_graphify"
+    ],
+    "1": [
+      "package",
+      "package_dependencies"
+    ]
+  },
+  "cohesion": {
+    "0": 1.0,
+    "1": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_dependencies_graphify",
+      "label": "graphify",
+      "degree": 2
+    },
+    {
+      "id": "graphify",
+      "label": "graphify",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
